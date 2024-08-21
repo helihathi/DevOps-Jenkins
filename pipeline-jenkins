@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven' // Use the configured Maven installation in Jenkins
+        maven 'MavenProject3' 
     }
     stages {
         stage('Validate Maven Application') {
