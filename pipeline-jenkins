@@ -1,34 +1,27 @@
-#!/usr/bin/env groovy
-
 pipeline {
     agent any
+    tools {
+        maven 'Maven' // Use the configured Maven installation in Jenkins
+    }
     stages {
         stage('Validate Maven Application') {
             steps {
-                script {
-                    sh 'mvn validate'
-                }
+                sh 'mvn validate'
             }
         }
         stage('Compile Maven Application') {
             steps {
-                script {
-                    sh 'mvn compile'
-                }
+                sh 'mvn compile'
             }
         }
         stage('Test Maven Application') {
             steps {
-                script {
-                    sh 'mvn test'
-                }
+                sh 'mvn test'
             }
         }
         stage('Package Maven Application') {
             steps {
-                script {
-                    sh 'mvn package'
-                }
+                sh 'mvn package'
             }
         }
     }
