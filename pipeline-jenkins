@@ -1,27 +1,34 @@
-pipeline {
+#!/usr/bin/env groovy
+
+pipeline{
     agent any
-    tools {
-        maven 'MavenProject3' 
-    }
-    stages {
-        stage('Validate Maven Application') {
-            steps {
-                sh 'mvn validate'
+    stages{
+        stage('Validate Maven Application'){
+            steps{
+                script{
+	                sh 'mvn validate'
+                }
             }
         }
-        stage('Compile Maven Application') {
-            steps {
-                sh 'mvn compile'
+        stage('Compile Maven Application'){
+            steps{
+                script{
+	                sh 'mvn compile'
+                }
             }
         }
-        stage('Test Maven Application') {
-            steps {
-                sh 'mvn test'
+        stage('Test Maven Application'){
+            steps{
+                script{
+	                sh 'mvn test'
+                }
             }
         }
-        stage('Package Maven Application') {
-            steps {
-                sh 'mvn package'
+        stage('Package Maven Application'){
+            steps{
+                script{
+	                sh 'mvn package'
+                }
             }
         }
     }
