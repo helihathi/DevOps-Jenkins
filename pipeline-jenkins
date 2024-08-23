@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
 pipeline{
     agent any
-    tools{
-        maven 'MavenProject3'
-     }
+
     stages{
         stage('Validate Maven Application'){
             steps{
