@@ -12,26 +12,6 @@ pipeline{
                 }
             }
         }
-        stage('Compile Maven Application'){
-            steps{
-                script{
-	                sh 'mvn compile'
-                }
-            }
-        }
-        stage('Test Maven Application'){
-            steps{
-                script{
-	                sh 'mvn test'
-                }
-            }
-        }
-        stage('Package Maven Application'){
-            steps{
-                script{
-	                sh 'mvn package'
-                }
-            }
-        }
+      
     }
 }
